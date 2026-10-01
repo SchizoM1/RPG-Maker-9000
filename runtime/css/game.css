@@ -1,0 +1,86 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#gameCanvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#fpsCounter {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 5;
+    padding: 4px 8px;
+    font: bold 14px monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+#errorPrinter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    z-index: 9;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 720px;
+    padding: 16px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    font: 16px sans-serif;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.rpg9k-error-name {
+    color: #ff6060;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.rpg9k-error-stack {
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 12px;
+    max-height: 240px;
+    overflow: auto;
+}
+
+#errorPrinter button {
+    margin-top: 12px;
+    padding: 6px 18px;
+    font-size: 16px;
+}
+
+#loadingSpinner {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+    width: 32px;
+    height: 32px;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: rpg9k-spin 1s linear infinite;
+}
+
+@keyframes rpg9k-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "rpgmaker9k",
+  "productName": "RPG Maker 9000",
+  "version": "0.1.0",
+  "description": "An RPG Maker-style game editor that exports HTML5 canvas games.",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "fixtures": "node tools/make-project.mjs tests/.tmp/sample \"Sample Game\" --force",
+    "dist": "electron-builder",
+    "dist:dir": "electron-builder --dir",
+    "docs": "node tools/gen-event-docs.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.44",
+    "electron": "^33.4.11",
+    "electron-builder": "^24.13.3",
+    "vitest": "^1.6.1"
+  },
+  "author": "RPG Maker 9000",
+  "build": {
+    "appId": "com.rpg9k.editor",
+    "productName": "RPG Maker 9000",
+    "asar": false,
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "package.json",
+      "electron/**/*",
+      "editor/**/*",
+      "runtime/**/*",
+      "templates/**/*",
+      "plugins-examples/**/*",
+      "docs/**/*",
+      "assets/img/**/*",
+      "assets/audio/**/*",
+      "assets/fonts/**/*",
+      "assets/effects/**/*",
+      "assets/icon/**/*",
+      "!**/*.map"
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Development",
+      "icon": "editor/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "editor/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.developer-tools",
+      "icon": "editor/icon.png"
+    }
+  }
+}
