@@ -1,5 +1,7 @@
 # RPG Maker 9000
 
+![RPG 9k](https://github.com/SchizoM1/RPG-Maker-9000/blob/main/icon.png?raw=true)
+
 RPG Maker 9000 is a free and open source RPG creation tool based on RPG Maker MV and MZ.
 
 It includes a desktop editor for making tile based RPGs and uses an HTML5 and Canvas 2D runtime for running games.
